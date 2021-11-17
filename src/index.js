@@ -5,8 +5,8 @@ import DinoService from "./dinoService";
 let p = 1;
 let w = 10;
 
-let promise = DinoService.getFromApi(DinoService.dinoURL(p, w));
-promise.then(function(response) {
+DinoService.getFromApi(DinoService.dinoURL(p, w))
+.then(function(response) {
   const dino = JSON.parse(response);
   $('#dino-output').html(dinoFormat(dino));
   return DinoService.getFromApi(DinoService.colorURL(140, 160, 200, 40, 5, 3));
